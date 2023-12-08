@@ -14,7 +14,13 @@ html, body{
     margin: 0;
 }
 p{
-    opacity: 0.6;
+    font-weight: 400;
+}
+h1, h2, h3, h4, h5{
+    margin-bottom: 2rem;
+}
+h3{
+    color: rgb(241, 86, 112);
 }
 header{
     width: 100%;
@@ -39,9 +45,10 @@ header{
     justify-content: space-evenly;
     align-items: end;
     gap: 1.5rem;
+    font-size: 1.2rem;
 }
 hr{
-    opacity: 0.2;
+    opacity: 0.1;
 }
 .header_2{
     display: flex;
@@ -58,61 +65,63 @@ hr{
     display: flex;
     justify-content: flex-end;
     align-items: end;
-    float: right;
     margin-left: 15rem;
-    padding-left: 15rem;
+    padding-left: 14rem;
     gap: 4rem;
 }
 
-/*.schedule{
-    width: 200px;
-    margin: 0 auto;
+.schedule{
+    width: 150px;
+    margin: auto 6rem;
 }
 .schedule .input{
     border: 0;
-    outline: 0;
-    background-color: black;
+    outline: none;
     color: #fff;
+    background-color: #000;
+    text-align: right;
+    
 }
-.schedule .search-box{
+.schedule .schedule-btn{
     position: relative;
     width: 180px;
-    height: 50px;
+    height: 60px;
 }
-.search-box .input{
+.schedule-btn .input{
     position: absolute;
-    top: 0.6rem;
-    left: 0;
+    top: 10px;
+    left: 10px;
     width: 100%;
-    height: 40%;
-    padding: 1rem 2rem;
+    height: 40px;
+    padding: 0 1rem;
     border-radius: 2rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
-.search-box .btn_btn{
+.schedule-btn .btn_common{
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 60px;
-    height: 100%;
-    background-color: #fc5403;
+    top: 10px;
+    left: 0px;
+    width: 40px;
+    height: 67%;
+    background-color: #ff4500;
+    border-radius: 50%;
     z-index: 1;
     cursor: pointer;
 }
-.search-box .btn_btn .fa-circle-calendar{
+.schedule-btn .btn_common .fa-calendar{
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
-}*/
-.section{
+}
+.section-1{
     background: url(/images/banner-01.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     color: #fff;
     margin-top: -10rem;
 
@@ -122,36 +131,41 @@ hr{
     margin-left: 10rem;
 }
 .hero{
-    padding: 15rem 6rem;
+    padding: 15rem 7rem;
 }
-.btn{
+.toronto{
     background-color: #fff;
-    padding: 0.3rem;
-    max-width: 700px;
+    padding: 6px;
+    margin-top: -3rem;
+    max-width: 180px;
     border: none;
-    font-weight: 700;
-    
+    font-weight: 700;  
+    text-align: center; 
 }
-.section h1{
-    line-height: 3rem;
-    width: 17vw;
+.toronto p{
+    font-size: 1rem;
+    color: #000;
+}
+.hero h1{
+    line-height: 4.5rem;
+    width: 10ch;
     font-weight: 700;
-    font-size: 3rem;
-    margin-top: 1.5rem;
+    font-size: 4rem;
+    margin-top: 2rem;
 }
 span{
-    color: #fc5403;
+    color: #ff4500;
 }
 .loading .loading-dot{
     margin-left: 15rem;
-    margin-top: -2rem;
+    margin-top: -14rem;
     padding: 2rem;
-    gap: 5rem;
 }
 .loading li{
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
+    margin: 0.2rem;
     background-color: #fff;
     border-radius: 50%;
     animation-name: dots;
@@ -161,50 +175,89 @@ span{
 
 }
 .loading li:first-child{
-    background-color: #fc5403;
+    background-color: #ff4500;
+}
+.section-2{
+    width: 100vw;
+    height: 70vw;
 }
 .featured{
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin: 2rem;
+    margin: 5rem;
+}
+.featured-left{
+    position: relative;
+}
+.featured-left img{
+    margin: 1.6rem;
+}
+.featured-left .note {
+    position: absolute;
+    bottom: -1rem;
+    left: -2rem;
+    height: 100px;
+    width: 100px;
+    background-color: #ff4500;
+    border-radius: 50%;
 }
 .featured-center{
-    margin-left: -12rem;
-    margin-top: 2rem;
+    margin-left: -10rem;
+    margin-top: 5rem;
+    line-height: 2.5rem;
 }
-.featured-center .featured-content h2{
+.featured-content{
+    padding: 2rem 5rem;
+}
+.featured-center .featured-content h1{
     width: 12ch;
-    margin-top: 1.5rem;
-}
-.featured-center .link{
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-}
-.featured-info{
-    width: 40ch;
-    margin: 3rem 2rem;
-}
-.featured-center .ask{
+    font-size: 3rem;
     line-height: 4rem;
-    margin-left: 2rem;
+    margin-top: -1rem;
+}
+.featured-center .featured-link{
+    font-weight: 700;
+    margin: 0.70rem auto;
+}
+.featured-illustration{
+    width: 100%;
+    height: 45vh;
+    background-color: rgba(221, 218, 218, 0.2);
+    padding: 1.5rem;
+    margin-top: -2rem;
+    margin-left: 4rem;
+    line-height: 1.5rem;
+    border-radius: 1rem;
+    text-align: left;
+}
+.featured-illustration p{
+    width: 40ch;
+    font-size: 1.2rem;
+}
+.featured-center .FAQs{
+    line-height: 2rem;
+    margin: 2rem auto;
+    font-size: 1rem;
 }
 .featured .featured-right{
+    width: 20vw;
     height: 30vw;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 50px 0 rgba(0, 0, 0, 0.20);
-    border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 0.5rem;
+    margin-right: 5rem;
+    margin-bottom: 2rem;
     text-align: center;
 }
-.info{
+.featured-info{
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 2rem;
 
 }
-.info_1{
+.featured-info .info_1{
     width: 160px;
     display: flex;
     flex-direction: column;
@@ -212,10 +265,10 @@ span{
     align-items: center;
     text-align: left;
 }
-.info_1 strong{
+.featured-info .info_1 strong{
     font-size: 1.2rem;
 }
-.section-2{
+.section-3{
     background: url(/images/video-bg.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -227,31 +280,308 @@ span{
 }
 .video{
     padding: 10rem;
-    line-height: 3rem;
 }
-.video h2{
-    margin-bottom: 4rem;
-    font-size: 2rem;
-    width: 15ch;
-    margin-left: auto;
-    margin-right: auto;
+.video .video-header h3{
+    margin-top: -4rem;
+}
+.video .video-header h1{
+    font-size: 2.8rem;
+    font-family: 900;
+    padding-bottom: 4rem;
+    margin: auto;
+    width: 20ch;
+}
+.video img{
+    border-radius: 0.8rem;
+    width: 75vw;
+    height: 70%;
 }
 .box{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    margin: 0;
     color: #000;
 }
 .box .rate{
-    width: 170px;
+    width: 800px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    line-height: 1.5rem;
-    background-color: rgb(240, 180, 140);
+    padding: 2.8rem;
+    line-height: 1rem;
+    background-color: rgb(255, 241, 243);
+    border-radius: 0.8rem;
+    margin: 5rem;
+    text-align: center;
+    position: relative;
+}
+.box .rate h5{
+    width: 11ch;
+    margin: auto;
+    
+}
+.rate-1 h1{
+    margin: 0;
+    font-size: 3rem;
+}
+.circle{
+    position: absolute;
+    bottom: 75px;
+    left: 88%;
+    width: 60px;
+    height: 60px;
+    background-color: #ff4500;
+    border-radius: 50%;
+}
+.section-4{
+    background-color: rgba(221, 218, 218, 0.2);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    margin: 42rem auto;
+    
+}
+.deal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 4rem;
+    margin-bottom: 4rem;
+}
+.deal-header{
+    margin: 1rem;
+}
+.deal-header h1{
+    width: 18ch;
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    margin-bottom: 5rem;
+}
+.btn_btn{
+    margin-top: 4rem;
+    margin-right: 11rem;
+}
+.btn_btn-2{
+    padding: 0.8rem;
+    width: 130px;
+    margin: 1rem;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+.btn_btn-2:first-child{
+    background-color: #ff4500;
+}
+.deal-1{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: -7rem;
+}
+.deal-rate{
+    width: 20vw;
+    height: 23vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 50px 0 rgba(0, 0, 0, 0.20);
+    border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 0.5rem;
-    margin: 4rem;
+    margin-bottom: 2rem;
     text-align: center;
 }
+.deal-rate-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.1rem;
+    margin: 1.2rem 1.5rem;
+}
+.deal-rate-1 strong{
+    font-size: 1.2rem;
+}
+.deal-info{
+    display: inline-block;
+    line-height: 1.8rem;
+    margin: 0;
+}
+.deal-info .deal-info1{
+    width: 45ch;
+    margin-right: 2rem;
+    margin-bottom: 1.5rem;
+} 
+
+.deal-info .deal-info2{
+    width: 35ch;
+}
+.deal-info .schedule{
+    float: left;
+    margin-top: 0.5rem;
+    margin-left: 0;
+}
+.section-5{
+    width: 100vw;
+    height: 60vh;
+    margin-top: -35rem;
+}
+.property{
+    margin: auto;
+}
+.property-header{
+    margin: 0 auto;
+    width: 29ch;
+    text-align: center;
+}
+.property-header h1{
+    font-size: 2rem;
+    margin-bottom: 5rem;
+}
+.property-view{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.property-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem auto;
+}
+.property-price p{
+    background-color: rgb(255, 241, 243);
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+.property-price p, .property-description p, .property-description2 p{
+    margin-bottom: 2rem;
+}
+.property-description{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.property-description2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.property .property-view .schedule .input{
+    text-align: center;
+    margin: 2rem 0;
+}
+.section-6{
+    background: url(/images/contact-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+    margin: 33rem auto;
+}
+.contact{
+    padding: 7rem;
+    text-align: center;
+}
+.contact h1 {
+    margin: 2rem auto;
+    font-size: 2.5rem;
+    font-weight: 900;
+    width: 18ch;
+    text-align: center;
+    
+}
+.contact-map{
+    float: left;
+    margin-left: -8rem;
+    border-radius: 1rem;
+}
+.contact-map .map{
+    width: 100%;
+    height: auto;
+    flex: 50%;
+    
+}
+.contact-map .map iframe{
+    width: 800px;
+    height: 600px;
+    
+}
+.contact-map .contact-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem;
+}
+.contact-map .contact-details .contact-line{
+    width: 340px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 50px 0 rgba(0, 0, 0, 0.20);
+    border-radius: 1rem;
+}
+.contact-line .line{
+    color: #000;
+    padding: 2rem;
+}
+.contact-line .line p{
+    margin-top: -2rem;
+}
+.contact-info form{
+    width: 37vw;
+    height: 100vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 50px 0 rgba(0, 0, 0, 0.20);
+    border-radius: 1rem;
+    background-color: #fff;
+    color: #000;
+    float: right;
+    margin-right: -2rem;
+}
+.contact-info .contact-form label{
+    float: left;
+    padding: 0;
+    margin: 2.5rem 2rem;
+    font-size: 1.2rem;
+}
+.contact-info .contact-form input, textarea{
+    background-color: rgba(221, 218, 218, 0.5);
+    color: #000;
+    width: 90%;
+    padding: 1rem;
+    margin-top: -3rem;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+}
+.contact-info .contact-form textarea{
+    height: 170px;
+    margin-top: -1.5rem;
+}
+.btn2{
+    padding: 0.6rem;
+    margin: 1.5rem 2rem;
+    width: 150px;
+    float: left;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    border-radius: 2rem;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+footer {
+    background-color: #000000e7;
+    color: #fff;
+    width: 100vw;
+    padding: 2rem 10rem;
+    font-size: 1.2rem;
+
+}
+
+
+
