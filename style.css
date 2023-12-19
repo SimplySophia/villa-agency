@@ -6,9 +6,10 @@
     text-decoration: none;
     list-style: none;
 }
-html, body{
+body{
+    display: block;
     font-family: 'Poppins', sans-serif;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     scroll-behavior: smooth;
     margin: 0;
@@ -24,55 +25,78 @@ h3{
 }
 header{
     width: 100%;
-
+    height: 100px;
+    
 }
 .header_1{
+    width: 80vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0.5rem 7rem;
     cursor: pointer;
+    margin: 0.5rem 10rem;
 }
 .header_1 .header-links{
     display: flex;
     justify-content: space-evenly;
-    align-items: start;
+    align-items: flex-start;
     gap: 2rem;
-    margin: 0;
 }
 .header_1 .icons ul{
     display: flex;
     justify-content: space-evenly;
-    align-items: end;
+    align-items: center;
     gap: 1.5rem;
     font-size: 1.2rem;
+}
+.header_1 .header-links a{
+    color: #000;
 }
 hr{
     opacity: 0.1;
 }
 .header_2{
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     cursor: pointer;
+    padding:0.5rem 0;
 }
 .header_2 .logo{
-    margin-left: 5rem;
-    font-size: 1.25rem;
+    margin-left: 11rem;
+    font-size: 2rem;
     font-weight: 700;
+    color: #000;
+    font-weight: 900;
 }
 .header_2 nav ul{
+    width: 1000px;
     display: flex;
     justify-content: flex-end;
-    align-items: end;
-    margin-left: 15rem;
-    padding-left: 14rem;
-    gap: 4rem;
+    align-items: center;
+    margin: 0;
+    font-weight: 500;
 }
-
+.header_2 nav ul li a{
+    color: #000;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.header_2 nav ul li.active a{
+    color: #ff4500;
+}
+.header_2 .icons{
+    cursor: pointer;
+    display: none;
+}
+.hamburger{
+    display: none;
+}
 .schedule{
-    width: 150px;
-    margin: auto 6rem;
+    margin: -1rem 6rem;
 }
 .schedule .input{
     border: 0;
@@ -84,23 +108,23 @@ hr{
 }
 .schedule .schedule-btn{
     position: relative;
-    width: 180px;
+    width: 170px;
     height: 60px;
 }
 .schedule-btn .input{
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 0;
     width: 100%;
     height: 40px;
     padding: 0 1rem;
     border-radius: 2rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 .schedule-btn .btn_common{
     position: absolute;
     top: 10px;
-    left: 0px;
+    left: 0;
     width: 40px;
     height: 67%;
     background-color: #ff4500;
@@ -115,40 +139,70 @@ hr{
     transform: translate(-50%, -50%);
     color: #fff;
 }
-.section-1{
-    background: url(/images/banner-01.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100vw;
-    height: 90vh;
-    color: #fff;
-    margin-top: -10rem;
 
+.sidebar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #000;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1rem;
+    gap: 2rem;
+    margin: 0;
+}
+.sidebar li{
+    color: #000;
+    width: 100%;
+}
+.sidebar a{
+    width: 100%;
+}
+.menu{
+    display: none;
 }
 .section_1{
-    margin-top: 10rem;
-    margin-left: 10rem;
+    position: relative;
+}
+.loading{
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
 }
 .hero{
-    padding: 15rem 7rem;
+    position: absolute;
+    top: 55%;
+    right: 40%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: 700;
 }
 .toronto{
     background-color: #fff;
     padding: 6px;
-    margin-top: -3rem;
     max-width: 180px;
     border: none;
     font-weight: 700;  
     text-align: center; 
 }
+
 .toronto p{
     font-size: 1rem;
     color: #000;
 }
 .hero h1{
+    color: #fff;
     line-height: 4.5rem;
-    width: 10ch;
+    width: 12ch;
     font-weight: 700;
     font-size: 4rem;
     margin-top: 2rem;
@@ -156,25 +210,47 @@ hr{
 span{
     color: #ff4500;
 }
-.loading .loading-dot{
-    margin-left: 15rem;
-    margin-top: -14rem;
-    padding: 2rem;
+
+.loader-holder{
+    display: grid;
+    grid-template-columns: repeat(3, 100%);
+    width: 100%;
+    height: 100%;
+    animation: slider 30s ease-out infinite alternate;
 }
-.loading li{
+.loader-holder #slider-img-1{
+    background-image: url(/images/banner-01.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.loader-holder #slider-img-2{
+    background-image: url(/images/banner-02.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.loader-holder #slider-img-3{
+    background-image: url(/images/banner-03.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.loading-dot .button{
     display: inline-block;
     width: 15px;
     height: 15px;
     margin: 0.2rem;
     background-color: #fff;
     border-radius: 50%;
-    animation-name: dots;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-
 }
-.loading li:first-child{
+.loading-dot{
+    position: absolute;
+    left: 20%;
+    bottom: 13%;
+}
+
+.loading .button:first-child{
     background-color: #ff4500;
 }
 .section-2{
@@ -183,13 +259,16 @@ span{
 }
 .featured{
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin: 5rem;
+    height: 100%;
 }
 .featured-left{
     position: relative;
+    bottom: 12%;
+    left: 0;
 }
 .featured-left img{
     margin: 1.6rem;
@@ -197,19 +276,20 @@ span{
 .featured-left .note {
     position: absolute;
     bottom: -1rem;
-    left: -2rem;
+    left: -1rem;
     height: 100px;
     width: 100px;
     background-color: #ff4500;
     border-radius: 50%;
 }
 .featured-center{
-    margin-left: -10rem;
-    margin-top: 5rem;
+    position: relative;
+    top: 11%;
+    right: 18%;
     line-height: 2.5rem;
 }
 .featured-content{
-    padding: 2rem 5rem;
+    padding: 2rem 2rem;
 }
 .featured-center .featured-content h1{
     width: 12ch;
@@ -242,19 +322,20 @@ span{
     font-size: 1rem;
 }
 .featured .featured-right{
+    position: relative;
+    top: -650px;
+    right: -110%;
     width: 20vw;
-    height: 30vw;
+    height: 50vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 50px 0 rgba(0, 0, 0, 0.20);
     border-radius: 0.5rem;
-    margin-right: 5rem;
-    margin-bottom: 2rem;
     text-align: center;
 }
 .featured-info{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 2rem;
+    padding: 0.5rem;
 
 }
 .featured-info .info_1{
@@ -279,17 +360,25 @@ span{
     text-align: center;
 }
 .video{
-    padding: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.video .video-header h3{
-    margin-top: -4rem;
+.video .video-header{
+    font-family: 900;
+    margin: 5rem auto;
+    width: 45ch;
 }
 .video .video-header h1{
     font-size: 2.8rem;
-    font-family: 900;
-    padding-bottom: 4rem;
-    margin: auto;
-    width: 20ch;
+}
+.rate-1 h1{
+    margin: 0;
+    font-size: 3rem;
+}
+.rate_2 h5{
+    margin: 0.5rem 2px;
 }
 .video img{
     border-radius: 0.8rem;
@@ -297,36 +386,33 @@ span{
     height: 70%;
 }
 .box{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-around;
     align-items: center;
     color: #000;
+    grid-gap: 5rem;
+    margin: 7rem;
+    padding: rem;
+    transform: translateY(-50px);
 }
-.box .rate{
-    width: 800px;
+.rate{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 2.8rem;
-    line-height: 1rem;
-    background-color: rgb(255, 241, 243);
-    border-radius: 0.8rem;
-    margin: 5rem;
-    text-align: center;
+    gap: 2rem;
+    background-color: antiquewhite;
+    padding: 1.2rem 4rem;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
     position: relative;
 }
-.box .rate h5{
-    width: 11ch;
-    margin: auto;
-    
-}
-.rate-1 h1{
-    margin: 0;
-    font-size: 3rem;
+.rate_2{
+    width: 100px;
 }
 .circle{
     position: absolute;
-    bottom: 75px;
+    top: -12px;
     left: 88%;
     width: 60px;
     height: 60px;
@@ -360,8 +446,7 @@ span{
     margin-bottom: 5rem;
 }
 .btn_btn{
-    margin-top: 4rem;
-    margin-right: 11rem;
+    margin: auto 12rem;
 }
 .btn_btn-2{
     padding: 0.8rem;
@@ -384,9 +469,8 @@ span{
 }
 .deal-rate{
     width: 20vw;
-    height: 23vw;
+    height: 45vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 50px 0 rgba(0, 0, 0, 0.20);
-    border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 0.5rem;
     margin-bottom: 2rem;
     text-align: center;
@@ -406,6 +490,9 @@ span{
     line-height: 1.8rem;
     margin: 0;
 }
+.deal-info h4{
+    font-size: 1.5rem;
+}
 .deal-info .deal-info1{
     width: 45ch;
     margin-right: 2rem;
@@ -423,53 +510,85 @@ span{
 .section-5{
     width: 100vw;
     height: 60vh;
-    margin-top: -35rem;
+    margin-top: -45rem;
 }
 .property{
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
 .property-header{
-    margin: 0 auto;
-    width: 29ch;
+    margin: 4rem auto;
     text-align: center;
+    width: 45ch;
+}
+.property-header h3{
+    margin: 2rem 0;
 }
 .property-header h1{
-    font-size: 2rem;
-    margin-bottom: 5rem;
+    font-size: 2.8rem;
 }
 .property-view{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin: 2rem auto;
+    transform: translateY(-50px);
+}
+.property-illustration{
+    width: 25vw;
+    background-color: rgba(221, 218, 218, 0.2);
+    border-radius: 0.5rem;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 2.5rem;
+}
+.property-illustration img{
+    max-width: 320px;
+    border-radius: 0.5rem;
 }
 .property-price{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2rem auto;
+    width: 600px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5rem;
 }
 .property-price p{
-    background-color: rgb(255, 241, 243);
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-    border-radius: 4px;
+    background-color: antiquewhite;
+    margin: 1rem 0;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
 }
-.property-price p, .property-description p, .property-description2 p{
-    margin-bottom: 2rem;
+.property-price h3{
+    margin: 1rem 1.5rem;
+}
+.property-illustration h2{
+    font-size: 1.2rem;
+    margin: 2rem 0;
 }
 .property-description{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    font-size: 0.8rem;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+.property-description h5{
+    margin: auto;
 }
 .property-description2{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 4px 2px;
+    font-size: 0.8rem;
 }
-.property .property-view .schedule .input{
+.property-description2 strong{
+    margin: auto 8px;
+}
+.property .property-view .schedule{
     text-align: center;
-    margin: 2rem 0;
+    margin: 3rem auto;
 }
 .section-6{
     background: url(/images/contact-bg.jpg);
@@ -479,7 +598,7 @@ span{
     width: 100vw;
     height: 100vh;
     color: #fff;
-    margin: 33rem auto;
+    margin: 45rem auto;
 }
 .contact{
     padding: 7rem;
@@ -582,6 +701,356 @@ footer {
     font-size: 1.2rem;
 
 }
+/*MEDIA QUERIES*/
+/*laptops*/
+/*
+@media screen and (min-width: 992px) {
+    .hideOnMobile{
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+    section{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+}
+    .header_2{
+        margin: 0;
+        padding: 0.5rem;
+        width: 70%;
+    }
+    .logo{
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    nav {
+        display: none; 
+        width: 100%;
+    }
 
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+    .schedule {
+        margin: 0 10rem;
+        width: 60vw;
+    }
+    .section-1{
+    text-align: center;
+    width: 90%;
+    }
+    .featured{
+        width: 100vw;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+    }
+    .featured-center{
+        text-align: center;
+        padding: 0;
+
+    }
+    .featured-right{
+        flex-direction: column;
+        display: flex;
+        width: 300px;
+        align-items: center;
+        margin-top:5rem;
+        padding: 2rem 10rem 0;
+    }
+    .featured-info{
+        display: flex;
+        justify-content: space-around;
+        gap: 4rem;
+        padding: 0;
+        margin: 0.2rem;
+    }
+    .video{
+        width: 100%;
+        margin: 80rem auto ;
+        align-items: center;
+        flex-direction: column;
+    }
+    .rate{
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .section-4{
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    .deal{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+    .deal-1{
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .deal-rate{
+        width: 50%;
+    }
+    .deal-info1, .schedule-btn{
+        margin: auto 10rem;
+    }
+    .deal-info2{
+        margin: auto 12rem;
+    }
+    .deal-info .schedule-btn{
+        margin: auto 17rem;
+    }
+    .section-5{
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+    }
+    .property-view{
+        margin-top: -50rem;
+        align-items: center;
+    }
+    .property-header{
+        margin: 50rem auto;
+    }
+    .property-illustration{
+        width: 350px;
+        height: 300px;
+        margin: 0 auto;  
+    }
+    .section-6{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact{
+        margin: 60rem 0;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-info{
+        flex-direction: column;
+    }
+    .contact-map{
+        width: 200px;
+    }
+    .contact-form{
+        width: 100%;
+        padding: 0;
+    }
+    .contact-line{
+        margin: 80rem auto;
+    }
+}
+/*@media screen and (max-width: 768px) {
+    /*body{
+        display: block;
+        text-align: center;
+        margin: auto;
+    }
+    .header_2{
+        width: 10%;
+        padding: 0;
+        margin: 0;
+    }
+    .header_2 .logo{
+        margin: 0 10rem;
+    }
+    .header_2 nav{
+        display: none;
+
+    }
+    
+    .header_1{
+        align-items: center;
+        width: 90vw;
+        margin: 1rem;
+    }
+    .icons{
+        
+    }
+    .header_2{
+        flex-direction: column;
+        align-items: center;
+        width: 65vw;
+        margin: 0;
+    }
+    nav a{
+        display: flex;
+        width: 25vw;
+        margin: 0 -10px;
+        padding: 0;
+    }
+    .schedule-btn{
+        display: none;
+    }
+   .header_2 .logo{
+        margin: 0 0 3rem 25rem;
+        text-align: center;
+        
+    }*/
+    /*.header_2 nav{
+        flex-direction: column;
+        align-items: center;
+        padding: auto 0;
+    }
+    .header_2 nav ul{
+        width: 100vw;
+        text-align: center;
+        margin: 0;
+    }*/
+   /* .header_2 nav,
+    .schedule-btn{
+        display: none;
+    }
+    .section-2{
+        width: 50vw;
+        height: 50vh;
+        margin: 0;
+    }
+    .featured{
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+    .featured-center{
+        margin: 0;
+        text-align: center;
+    }
+    .featured-right{
+        height: 10vh;
+        width: 10vw;
+        padding: 0;
+    }
+    .featured-info{
+        padding: 2rem;
+    }
+    .section-3{
+        height: 100vh;
+        width: 80vw;
+        margin-top: 10rem;
+    }
+    .video{
+        flex-direction: column;
+        margin: 2rem auto;
+        text-align: center;
+    }
+/*mobiles*/
+/*@media screen and (max-width: 768px){
+    body{
+        align-items: center;
+        text-align: center;
+    }
+    .header_1{
+        align-items: center;
+        width: 70vw;
+        margin: 1rem;
+    }
+    .header_2 nav{
+        display: none;
+    }
+    .header_2{
+        margin: 0;
+        padding: 0.5rem;
+        width: 70%;
+    }
+    .logo{
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        display: none; 
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+    .schedule {
+        margin: 0 10rem;
+        width: 60vw;
+    }
+    .section-1{
+    text-align: center;
+    width: 90%;
+    }
+    .featured{
+        width: 100vw;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 2rem;
+    }
+    .featured-center{
+        text-align: center;
+        margin-top: -4rem;
+        padding: 10rem;
+
+    }
+    .featured-right{
+        flex-direction: column;
+        display: flex;
+        width: 200px;
+        height: 200px;
+        align-items: center;
+        margin-top: 10rem;
+        padding: 2rem 15rem 0;
+    }
+    .featured-info{
+        display: flex;
+        justify-content: space-around;
+        gap: 4rem;
+        padding: 0;
+        margin: 0.2rem;
+    }
+    .video{
+        margin-top: 80rem;
+        align-items: center;
+    }
+    .box{  
+        align-items: center;
+        flex-direction: column;
+    }
+    .rate{
+        
+        
+    }
+    .deal{
+        margin-top: 50rem;
+        flex-direction: row;
+        align-items: center;
+    }
+    .property{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
 

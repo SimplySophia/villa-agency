@@ -32,13 +32,21 @@
                 <nav>
                     <ul>
                         <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="#">Properties</a></li>
-                        <li><a href="#">Property Details</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li class="hideOnMobile"><a href="#">Properties</a></li>
+                        <li class="hideOnMobile"><a href="#">Property Details</a></li>
+                        <li class="hideOnMobile"><a href="#">Contact Us</a></li>
+                        <li class="menu" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></a></li>
                     </ul>
                 </nav>
+                <ul class="sidebar">
+                    <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="#">Properties</a></li>
+                    <li><a href="#">Property Details</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
             </div>
-
+            
             <div class="schedule">
                 <div class="schedule-btn">
                     <div class="btn_common">
@@ -49,20 +57,27 @@
             </div>
         </div>
     </header>
+    
     <section class="section-1">
         <div class="section_1">
             <div class="hero">
                 <div class="toronto"><p>Toronto, <span>Canada</span></p></div>
                 <h1>HURRAY! GET THE BEST VILLA FOR YOU</h1>
             </div>
+            <div class="loading">
+                <div class="loader-holder">
+                    <div id="slider-img-1"></div>
+                    <div id="slider-img-2"></div>
+                    <div id="slider-img-3"></div>
+                </div>
+                <div class="loading-dot">
+                    <a href="#slider-img-1" class="button"></a>
+                    <a href="#slider-img-2" class="button"></a>
+                    <a href="#slider-img-3" class="button"></a>
+                </div>
+            </div>
         </div>
-        <div class="loading">
-            <ul class="loading-dot">
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
+        
     </section>
 
     <section class="section-2">
@@ -78,8 +93,6 @@
                 <div class="featured-content">
                     <h3>| FEATURED</h3>
                     <h1>Best Appartment & Sea View</h1>
-                </div>
-            
                 <div class="featured-illustration">
                     <div class="featured-link"><span>Best useful links ?</span></div>
                     <hr>
@@ -222,7 +235,7 @@
             </div>
 
             <div class="deal-info">
-                <h3>Extra info About Property</h3>
+                <h4>Extra info About Property</h4>
                 <p class="deal-info1">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet itaque rerum omnis vero tempora laudantium,
                     necessitatibus voluptate corporis quo, officia consectetur.
@@ -267,9 +280,9 @@
                     </div>
 
                     <div class="property-description2">
-                        <p>Area:<h5>545m2</h5></p>
-                        <p>Floor:<h5>3</h5></p>
-                        <p>Parking Space:<h5>6 spots</h5></p>
+                        <p>Area:<strong>545m2</strong></p>
+                        <p>Floor<strong>3</strong></p>
+                        <p>Parking Space:<strong>6 spots</strong></p>
                     </div>
                     <hr>
                     <div class="schedule">
@@ -288,14 +301,14 @@
 
                     <h2>18 New Street Miami, OR 97219</h2>
                     <div class="property-description">
-                        <p>Bedrooms: <h5>8</h5></p>
-                        <p>Bedrooms: <h5>8</h5></p>
+                        <p>Bedrooms:<h5>6</h5></p>
+                        <p>Bedrooms:<h5>5</h5></p>
                     </div>
 
                     <div class="property-description2">
-                        <p>Area: <h5>545m2</h5></p>
-                        <p>Floor: <h5>3</h5></p>
-                        <p>Parking Space: <h5>6 spots</h5></p>
+                        <p>Area<strong>450m2</strong></p>
+                        <p>Floor:<strong>3</strong></p>
+                        <p>Parking Space:<strong>8 spots</strong></p>
                     </div>
                     <hr>
                     <div class="schedule">
@@ -314,14 +327,14 @@
 
                     <h2>18 New Street Miami, OR 97219</h2>
                     <div class="property-description">
-                        <p>Bedrooms: <h5>8</h5></p>
-                        <p>Bedrooms: <h5>8</h5></p>
+                        <p>Bedrooms:<h5>5</h5></p>
+                        <p>Bedrooms:<h5>4</h5></p>
                     </div>
 
                     <div class="property-description2">
-                        <p>Area: <h5>545m2</h5></p>
-                        <p>Floor: <h5>3</h5></p>
-                        <p>Parking Space: <h5>6 spots</h5></p>
+                        <p>Area:<strong>225m2</strong></p>
+                        <p>Floor:<strong>3</strong></p>
+                        <p>Parking Space:<strong>10 spots</strong></p>
                     </div>
                     <hr>
                     <div class="schedule">
@@ -403,6 +416,15 @@
         </p>
         
    </footer>
-
+   <script>
+    function showSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'flex'
+    }
+    function hideSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'none'
+    }
+   </script>
 </body>
 </html>
